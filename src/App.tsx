@@ -11,6 +11,6 @@ export default function App() {
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Landingpage" element={<LandingPage />} />
       </Routes>
-      </div>
-  )
+    </div>
+  );
 }
