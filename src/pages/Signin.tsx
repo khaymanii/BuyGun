@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SignupImage from "../assets/images/ak5.jpg";
+import SignupImage from "/assets/images/ak5.jpg";
 
 function Signin() {
   return (
