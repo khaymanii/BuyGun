@@ -73,7 +73,7 @@ function Contactus() {
           <p className="font-semibold">buygun@gmail.com</p>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 px-4 mb-16">
         <form className="flex flex-col md:w-1/2 w-full">
           <input
             type="text"
