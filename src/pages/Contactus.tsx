@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 function Contactus() {
   return (
     <div>
@@ -103,6 +105,7 @@ function Contactus() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -9,7 +9,7 @@ function Signin() {
       </div>
       <div className="flex-1 flex items-center justify-center">
         <div className="flex flex-col items-center gap-10 mobile:mt-5 mobile:gap-10 tablet:mt-3">
-          <h2 className="text-3xl text-bold">Buygun</h2>
+          <h2 className="text-3xl font-semibold">Buygun</h2>
           <form className="w-4/4 max-w-md  space-y-4 mobile:px-4 mb-8">
             <h2 className="text-2xl font-semibold">Sign In</h2>
             <div className="flex flex-row items-center gap-2">
