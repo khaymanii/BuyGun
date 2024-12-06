@@ -1,16 +1,16 @@
 function Footer() {
   return (
-    <div className="bg-white">
+    <div className="bg-black text-white">
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <h2 className="text-3xl font-semibold">Buygun</h2>
-          <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
+          <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end text-white">
             <li>
               <a
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="transition hover:opacity-75 text-white"
               >
                 <span className="sr-only">Facebook</span>
 
@@ -34,7 +34,7 @@ function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Instagram</span>
 
@@ -58,7 +58,7 @@ function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Twitter</span>
 
@@ -78,7 +78,7 @@ function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">GitHub</span>
 
@@ -102,7 +102,7 @@ function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Dribble</span>
 
@@ -125,54 +125,39 @@ function Footer() {
 
         <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16">
           <div>
-            <p className="font-medium text-gray-900">Services</p>
+            <p className="font-medium text-white">Services</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   1on1 Coaching{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Company Review{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Accounts Review{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   HR Consulting{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   SEO Optimization{" "}
                 </a>
@@ -181,34 +166,25 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-medium text-gray-900">Company</p>
+            <p className="font-medium text-white">Company</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   About{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Meet the Team{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Accounts Review{" "}
                 </a>
@@ -217,34 +193,25 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-medium text-gray-900">Helpful Links</p>
+            <p className="font-medium text-white">Helpful Links</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Contact{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   FAQs{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Live Chat{" "}
                 </a>
@@ -253,44 +220,32 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-medium text-gray-900">Legal</p>
+            <p className="font-medium text-white">Legal</p>
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Accessibility{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Returns Policy{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Refund Policy{" "}
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-gray-700 transition hover:opacity-75"
-                >
+                <a href="#" className="text-white transition hover:opacity-75">
                   {" "}
                   Hiring Statistics{" "}
                 </a>
@@ -299,7 +254,7 @@ function Footer() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-white">
           &copy; 2022. Company Name. All rights reserved.
         </p>
       </div>
