@@ -2,8 +2,8 @@ function Contactus() {
   return (
     <div>
       <h1 className="font-semibold text-3xl text-center my-8">Contact Us</h1>
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 mb-6">
-        <div className="lg:w-1/2 h-44 rounded-lg bg-gray-50 text-center p-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 mb-6 px-4">
+        <div className="md:w-1/3 h-44 rounded-lg bg-gray-50 text-center p-6 w-full">
           <div className="flex items-center justify-center mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@ function Contactus() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -25,11 +25,11 @@ function Contactus() {
               />
             </svg>
           </div>
-          <p className="text-gray-500 text-bold">ADDRESS</p>
-          <p className="text-semibold">234 Hiau Trieu, Hu Chin Mhin City,</p>
-          <p className="text-semibold">Viet Nam</p>
+          <p className="text-gray-500 font-bold">ADDRESS</p>
+          <p className="font-semibold">234 Hiau Trieu, Hu Chin Mhin City,</p>
+          <p className="font-semibold">Viet Nam</p>
         </div>
-        <div className="w-1/2 h-44 rounded-lg bg-gray-50 text-center p-6">
+        <div className="md:w-1/3 h-44 rounded-lg bg-gray-50 text-center p-6 w-full">
           <div className="flex items-center justify-center mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ function Contactus() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -47,10 +47,10 @@ function Contactus() {
             </svg>
           </div>
 
-          <p className="text-gray-500 text-bold">CONTACT US</p>
-          <p className="text-semibold">+845 475 2249</p>
-        </div>{" "}
-        <div className="w-1/2 h-44 rounded-lg bg-gray-50 text-center p-6">
+          <p className="text-gray-500 font-bold">CONTACT US</p>
+          <p className="font-semibold">+845 475 2249</p>
+        </div>
+        <div className="md:w-1/3 h-44 rounded-lg bg-gray-50 text-center p-6 w-full">
           <div className="flex items-center justify-center mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ function Contactus() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -67,12 +67,12 @@ function Contactus() {
               />
             </svg>
           </div>
-          <p className="text-gray-500 text-bold">EMAIL</p>
-          <p className="text-semibold">buygun@gmail.com</p>
+          <p className="text-gray-500 font-bold">EMAIL</p>
+          <p className="font-semibold">buygun@gmail.com</p>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex justify-between">
-        <form className="flex flex-col w-1/2">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 px-4">
+        <form className="flex flex-col md:w-1/2 w-full">
           <input
             type="text"
             placeholder="Your Full Name"
@@ -90,16 +90,16 @@ function Contactus() {
           <button
             title="Send Message"
             type="submit"
-            className="w-1/3 text-center p-2 bg-black text-white rounded-lg"
+            className="w-full md:w-1/3 text-center p-2 bg-black text-white rounded-lg"
           >
             Send Message
           </button>
         </form>
-        <div>
+        <div className="flex justify-center md:w-1/2 w-full">
           <img
             src="/assets/images/map.png"
             alt="map"
-            className="w-[600px] h-[330px]"
+            className="w-full h-auto md:max-w-[600px] rounded-lg"
           />
         </div>
       </div>
