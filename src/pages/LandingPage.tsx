@@ -1,5 +1,13 @@
-function LandingPage() {
-  return <div>LandingPage</div>;
-}
+import Hero from "../components/Hero";
+import HomeAdvertise from "../components/HomeAdvertise";
+import Navbar from "../components/Navbar";
 
-export default LandingPage;
+export default function LandingPage () {
+ return ( <div className="">
+  <HomeAdvertise />
+  <Navbar />
+  <Hero />
+
+   </div>
+  )
+}
