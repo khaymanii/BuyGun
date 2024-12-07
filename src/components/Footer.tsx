@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <div className="bg-black text-white">
-      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+    <div className="bg-black text-white mt-16 -mb-10">
+      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 lg:space-y-16">
         <div className="sm:flex sm:items-center sm:justify-between">
           <h2 className="text-3xl font-semibold">Buygun</h2>
           <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end text-white">
