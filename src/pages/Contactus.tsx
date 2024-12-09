@@ -5,7 +5,7 @@ function Contactus() {
     <div>
       <h1 className="font-semibold text-3xl text-center my-8">Contact Us</h1>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 mb-6 px-4">
-        <div className="md:w-1/3 h-44 rounded-lg bg-gray-50 text-center p-6 w-full">
+        <div className="md:w-1/3 h-44 rounded-lg bg-gray-100 text-center p-6 w-full">
           <div className="flex items-center justify-center mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ function Contactus() {
           <p className="font-semibold">234 Hiau Trieu, Hu Chin Mhin City,</p>
           <p className="font-semibold">Viet Nam</p>
         </div>
-        <div className="md:w-1/3 h-44 rounded-lg bg-gray-50 text-center p-6 w-full">
+        <div className="md:w-1/3 h-44 rounded-lg bg-gray-100 text-center p-6 w-full">
           <div className="flex items-center justify-center mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ function Contactus() {
           <p className="text-gray-500 font-bold">CONTACT US</p>
           <p className="font-semibold">+845 475 2249</p>
         </div>
-        <div className="md:w-1/3 h-44 rounded-lg bg-gray-50 text-center p-6 w-full">
+        <div className="md:w-1/3 h-44 rounded-lg bg-gray-100 text-center p-6 w-full">
           <div className="flex items-center justify-center mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
