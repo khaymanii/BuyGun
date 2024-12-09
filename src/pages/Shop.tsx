@@ -1,4 +1,6 @@
+import { products } from "../../Utils/Data";
 import ShopCard from "../components/ShopCard";
+import Footer from "../components/Footer";
 
 function Shop() {
   return (
@@ -12,9 +14,17 @@ function Shop() {
           className="w-full sm:h-[500px] h-[300px]"
         />
       </div>
-      <div className="">
-        <ShopCard />
+      <div className="max-w-7xl mx-auto flex-wrap justify-between flex">
+        {products.map((product) => (
+          <ShopCard
+            key={product.id}
+            image={product.image}
+            name={product.productName}
+            price={`$${product.price.toFixed(2)}`}
+          />
+        ))}{" "}
       </div>
+      <Footer />
     </div>
   );
 }
