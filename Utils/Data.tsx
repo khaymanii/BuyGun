@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-[
+export const products = [
   {
     id: 1,
     productName: "Glock 19 Gen 5",
@@ -12,7 +11,7 @@
     caliber: "9mm",
     weight: "670g",
     material: "Polymer",
-    image: "/images/glock19.jpg",
+    image: "/assets/images/ak7bg.png",
     description:
       "The Glock 19 Gen 5 is a compact 9mm handgun perfect for personal defense.",
     reviews: 150,
@@ -31,7 +30,7 @@
     caliber: "12 gauge",
     weight: "3kg",
     material: "Steel",
-    image: "/images/remington870.jpg",
+    image: "/assets/images/ak5bg.png",
     description:
       "The Remington 870 Tactical is known for its versatility and reliability in self-defense.",
     reviews: 95,
@@ -50,7 +49,7 @@
     caliber: "5.56mm",
     weight: "62gr",
     material: "Brass casing",
-    image: "/images/winchester556.jpg",
+    image: "/assets/images/ak1bg.png",
     description:
       "Winchester 5.56 NATO ammunition offers reliable performance for target shooting and defense.",
     reviews: 300,
@@ -69,7 +68,7 @@
     caliber: "9mm",
     weight: "833g",
     material: "Polymer and Stainless Steel",
-    image: "/images/sigp320.jpg",
+    image: "/assets/images/ak2bg.png",
     description:
       "The Sig Sauer P320 is a modular and versatile full-size handgun for military and law enforcement.",
     reviews: 220,
@@ -88,32 +87,16 @@
     caliber: ".308 Win",
     weight: "168gr",
     material: "Brass casing",
-    image: "/images/federal308.jpg",
+    image: "/assets/images/ak4bg.png",
     description:
       "Premium .308 Winchester ammunition designed for precision and hunting applications.",
     reviews: 80,
     SKU: "FED-308WIN-168GR",
     quantity: 50,
   },
+
   {
     id: 6,
-    productName: "EOTech EXPS3 Holographic Sight",
-    category: "Accessories",
-    brand: "EOTech",
-    price: 579.99,
-    inStock: true,
-    onSale: true,
-    rating: 4.9,
-    material: "Aluminum",
-    image: "/images/eotech_exps3.jpg",
-    description:
-      "EOTech EXPS3 holographic sight provides fast target acquisition and reliability in all conditions.",
-    reviews: 200,
-    SKU: "EOT-EXPS3",
-    quantity: 18,
-  },
-  {
-    id: 7,
     productName: "Hornady Critical Defense 9mm",
     category: "Ammunition",
     brand: "Hornady",
