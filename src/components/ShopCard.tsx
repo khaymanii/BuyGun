@@ -19,9 +19,22 @@ function ShopCard({
           <p className="font-semibold text-xl">{name}</p>
           <p className="font-semibold text-lg">{price}</p>
         </div>
-        <button className="w-8 h-8 bg-black rounded-full text-white text-xl flex items-center justify-center">
-          +
-        </button>
+        <div className="w-8 h-8 bg-black rounded-full text-white font-bold flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
