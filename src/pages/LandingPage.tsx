@@ -1,5 +1,6 @@
 import Category from "../components/Category";
 import Featured from "../components/Featured";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import HomeAdvertise from "../components/HomeAdvertise";
 import Navbar from "../components/Navbar";
@@ -17,6 +18,7 @@ export default function LandingPage () {
   <ShopCollection />
   <Newsletter />
   <SocialMedia />
+  <Footer />
    </div>
   )
 }
