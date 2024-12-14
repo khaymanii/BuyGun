@@ -43,7 +43,7 @@ function ProductDetails() {
               Quantity in Stock: <span className="font-semibold">24</span>
             </p>
           </div>
-          <p className="sm:text-xl lg:text-xl text-2xl mb-8 sm:mx-0 mx-2">
+          <p className="sm:text-xl lg:text-xl text-2xl mb-8 sm:mx-0 mx-2 text-gray-500">
             The Glock 19 Gen 5 is a compact 9mm handgun perfect for personal
             defense.
           </p>
