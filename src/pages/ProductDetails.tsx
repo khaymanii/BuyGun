@@ -1,55 +1,65 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useParams } from "react-router-dom";
+import { products } from "../../Utils/Data";
 
 function ProductDetails() {
+  const { id } = useParams(); // Get product ID from the URL
+  const product = products.find((item) => item.id === parseInt(id || "")); // Find the product by ID
+
+  if (!product) {
+    return <h2>Product not found</h2>;
+  }
   return (
     <div>
-      {" "}
       <Navbar />
       <div className="bg-black w-full h-64 flex items-center justify-center">
-        {" "}
         <h1 className="font-semibold text-3xl text-center text-white">
-          Glock 19 Gen 5
+          {product.productName}{" "}
         </h1>
       </div>
-      <div className="max-w-7xl mx-auto sm:flex lg:flex-row flex-col justify-between items-center">
-        <div className="sm:w-1/2 w-full">
+      <div className="max-w-7xl mx-auto flex flex-wrap lg:flex-row flex-col justify-between items-center px-4 mt-8">
+        {/* Image Section */}
+        <div className="lg:w-1/2 w-full flex justify-center mb-4 lg:mb-0">
           <img
-            src="/assets/images/ak7bg.png"
-            alt="ak7bg"
-            className="w-[500px]]"
+            src={product.image}
+            alt={product.productName}
+            className="w-full max-w-[500px]"
           />
         </div>
-        <div className="sm:w-1/2 lg:w-1/2 w-full">
-          <h1 className="text-4xl font-semibold lg:mb-4 mb-2 sm:mx-0 mx-2">
-            Glock 19 Gen 5
-          </h1>
-          <p className="font-semibold lg:mb-8 mb-2 text-2xl sm:mx-0 mx-2">
-            $499.9
-          </p>
 
-          <div className="flex flex-wrap items-center justify-between font-normal sm:text-xl lg:text-xl text-2xl lg:mb-8 mb-4 lg:flex-row sm:mx-0 mx-2">
-            <p>
-              Brand: <span className="font-semibold">Glock</span>
+        {/* Details Section */}
+        <div className="lg:w-1/2 w-full">
+          <h1 className="text-4xl font-semibold lg:mb-4 mb-2">
+            {product.productName}{" "}
+          </h1>
+          <p className="font-semibold lg:mb-8 mb-2 text-2xl">
+            {" "}
+            ${product.price.toFixed(2)}
+          </p>
+          <div className="flex flex-wrap items-center justify-between font-normal sm:text-lg lg:text-xl text-lg lg:mb-8 mb-4">
+            <p className="w-full sm:w-1/2 mb-2">
+              Brand: <span className="font-semibold">{product.brand}</span>
             </p>
-            <p>
-              Category: <span className="font-semibold">Handgun</span>
+            <p className="w-full sm:w-1/2 mb-2">
+              Category:{" "}
+              <span className="font-semibold">{product.category}</span>
             </p>
-            <p>
-              Caliber: <span className="font-semibold">9mm</span>
+            <p className="w-full sm:w-1/2 mb-2">
+              Caliber: <span className="font-semibold">{product.caliber}</span>
             </p>
-            <p>
-              Weight: <span className="font-semibold">670g</span>
+            <p className="w-full sm:w-1/2 mb-2">
+              Weight: <span className="font-semibold">{product.weight}</span>
             </p>
-            <p>
-              Quantity in Stock: <span className="font-semibold">24</span>
+            <p className="w-full sm:w-1/2 mb-2">
+              Quantity in Stock:{" "}
+              <span className="font-semibold">{product.quantity}</span>
             </p>
           </div>
-          <p className="sm:text-xl lg:text-xl text-2xl mb-8 sm:mx-0 mx-2 text-gray-500">
-            The Glock 19 Gen 5 is a compact 9mm handgun perfect for personal
-            defense.
+          <p className="sm:text-lg lg:text-xl text-lg mb-8 text-gray-500">
+            {product.description}
           </p>
-          <button className="text-white bg-black px-4 py-3 w-[50%] sm:mx-0 mx-2 rounded-lg font-semibold">
+          <button className="text-white bg-black px-4 py-3 w-full sm:w-[50%] rounded-lg font-semibold">
             Add to Cart
           </button>
         </div>

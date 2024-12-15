@@ -13,12 +13,13 @@ function Shop() {
         <img
           src="/assets/images/g4.jpg"
           alt="gunbg"
-          className="w-full sm:h-[500px] h-[300px]"
+          className="w-full sm:h-[400px] h-[300px]"
         />
       </div>
       <div className="max-w-7xl mx-auto flex-wrap justify-between flex">
         {products.map((product) => (
           <ShopCard
+            id={product.id}
             key={product.id}
             image={product.image}
             name={product.productName}
