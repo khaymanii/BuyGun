@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import backgroundImage from "/assets/images/ak4-removebg-preview.png";
+import backgroundImage from "/assets/images/ak4bg.png";
 export default function Hero() {
   return (
     <div className="bg-black">

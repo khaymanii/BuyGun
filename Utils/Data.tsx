@@ -162,12 +162,12 @@ export const categoriesCard = [
   },
   {
     id: 2,
-    Image: "/assets/images/glock-removebg-preview.png",
+    Image: "/assets/images/glockbg.png",
     name: "Glock Gun",
   },
   {
     id: 3,
-    Image: "/assets/images/ak1-removebg-preview.png",
+    Image: "/assets/images/ak1bg.png",
     name: "AK-Gun",
   },
   {
@@ -177,7 +177,7 @@ export const categoriesCard = [
   },
   {
     id: 5,
-    Image: "/assets/images/ak7-removebg-preview.png",
+    Image: "/assets/images/ak7bg.png",
     name: "AK- Gun",
   },
 
@@ -188,7 +188,7 @@ export const categoriesCard = [
   },
   {
     id: 7,
-    Image: "/assets/images/ak7-removebg-preview.png",
+    Image: "/assets/images/ak7bg.png",
     name: "AK-47",
   },
 
@@ -202,7 +202,7 @@ export const categoriesCard = [
 export const featuredCard = [
   {
     id: 1,
-    image: "/assets/images/ak5-removebg-preview.png",
+    image: "/assets/images/ak5bg.png",
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
@@ -222,7 +222,7 @@ export const featuredCard = [
   },
   {
     id: 3,
-    image: "/assets/images/glock-removebg-preview.png",
+    image: "/assets/images/glockbg.png",
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
@@ -232,7 +232,7 @@ export const featuredCard = [
   },
   {
     id: 4,
-    image: "/assets/images/ak7-removebg-preview.png",
+    image: "/assets/images/ak7bg.png",
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
@@ -252,7 +252,7 @@ export const featuredCard = [
   },
   {
     id: 1,
-    image: "/assets/images/ak5-removebg-preview.png",
+    image: "/assets/images/ak5bg.png",
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
@@ -265,13 +265,13 @@ export const featuredCard = [
 export const shopCard = [
   {
     id: "1",
-    image: "/assets/images/glock-removebg-preview.png",
+    image: "/assets/images/glockbg.png",
     name: "Glock",
     link: "Collections",
   },
   {
     id: "2",
-    image: "/assets/images/ak7-removebg-preview.png",
+    image: "/assets/images/ak7bg.png",
     name: "Pistol Gun",
     link: "Collections",
   },

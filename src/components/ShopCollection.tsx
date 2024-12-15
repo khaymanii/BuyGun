@@ -13,7 +13,7 @@ export default function ShopCollection() {
         {/* Main Image Section */}
         <div className="flex flex-col bg-gray-100 p-4 rounded-md sm:w-[500px] md:w-[600px]">
           <img
-            src="/assets/images/ak5-removebg-preview.png"
+            src="/assets/images/ak5bg.png"
             alt=""
             className="-rotate-12 object-cover"
           />
