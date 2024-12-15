@@ -11,11 +11,11 @@ export default function App() {
     <div className="">
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/contact" element={<Contactus />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Contact" element={<Contactus />} />
+        <Route path="/Shop" element={<Shop />} />
+        <Route path="/Product/:id" element={<ProductDetails />} />
       </Routes>
     </div>
   );

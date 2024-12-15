@@ -1,9 +1,11 @@
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 function ProductDetails() {
   return (
     <div>
       {" "}
+      <Navbar />
       <div className="bg-black w-full h-64 flex items-center justify-center">
         {" "}
         <h1 className="font-semibold text-3xl text-center text-white">
