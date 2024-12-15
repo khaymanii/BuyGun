@@ -150,52 +150,52 @@
     SKU: "SW-MP9-9MM",
     quantity: 30,
   },
-]
+];
 
 export const categoriesCard = [
   {
     id: 1,
     Image: "/assets/images/coboygunbg.png",
     name: "Coboy Guns",
-    },
-    {
-      id: 2,
-      Image: "/assets/images/glock-removebg-preview.png",
-      name: "Glock Gun",
-      },
-      {
-        id: 3,
-        Image: "/assets/images/ak1-removebg-preview.png",
-        name: "AK-Gun",
-        },
-        {
-          id: 4,
-          Image: "/assets/images/savage.jpg",
-          name: "Savage Gun",
-          },
-          {
-            id: 5,
-            Image: "/assets/images/ak7-removebg-preview.png",
-            name: "AK- Gun",
-            },
+  },
+  {
+    id: 2,
+    Image: "/assets/images/glock-removebg-preview.png",
+    name: "Glock Gun",
+  },
+  {
+    id: 3,
+    Image: "/assets/images/ak1-removebg-preview.png",
+    name: "AK-Gun",
+  },
+  {
+    id: 4,
+    Image: "/assets/images/savage.jpg",
+    name: "Savage Gun",
+  },
+  {
+    id: 5,
+    Image: "/assets/images/ak7-removebg-preview.png",
+    name: "AK- Gun",
+  },
 
-            {
-              id: 6,
-              Image: "/assets/images/b1.jpg",
-              name: "Bullet",
-              },
-              {
-                id: 7,
-                Image: "/assets/images/ak7-removebg-preview.png",
-                name: "AK-47",
-                },
-    
-                {
-                  id: 8,
-                  Image: "/assets/images/b1.jpg",
-                  name: "Bullet",
-                  }
-]
+  {
+    id: 6,
+    Image: "/assets/images/b1.jpg",
+    name: "Bullet",
+  },
+  {
+    id: 7,
+    Image: "/assets/images/ak7-removebg-preview.png",
+    name: "AK-47",
+  },
+
+  {
+    id: 8,
+    Image: "/assets/images/b1.jpg",
+    name: "Bullet",
+  },
+];
 
 export const featuredCard = [
   {
@@ -205,7 +205,7 @@ export const featuredCard = [
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
     name: "AK-47",
-    description: "A befit raffle",
+    description: "A befit riffle",
     price: "$400.00",
   },
   {
@@ -235,12 +235,32 @@ export const featuredCard = [
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
     name: "Pistol Gun",
-    description: "A good metals gun with bullet",
+    description: "A good metal gun with bullet",
     price: "$100.00",
   },
-]
+  {
+    id: 5,
+    image: "/assets/images/coboygunbg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "Coboy Gun",
+    description: "A short gun",
+    price: "$300.00",
+  },
+  {
+    id: 1,
+    image: "/assets/images/ak5-removebg-preview.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "AK-47",
+    description: "A befit raffle",
+    price: "$400.00",
+  },
+];
 
-export const shopCard =[
+export const shopCard = [
   {
     id: "1",
     image: "/assets/images/glock-removebg-preview.png",
@@ -253,4 +273,4 @@ export const shopCard =[
     name: "Pistol Gun",
     link: "Collections",
   },
-]
+];

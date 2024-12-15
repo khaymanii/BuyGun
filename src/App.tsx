@@ -9,12 +9,11 @@ export default function App() {
   return (
     <div className="">
       <Routes>
-        <Route path="/" element={<Signup />} />
-        <Route path="/Signin" element={<Signin />} />
-        <Route path="/Contactus" element={<Contactus />} />
-        <Route path="/Shop" element={<Shop />} />
-
-        <Route path="/Landingpage" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/contact" element={<Contactus />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
     </div>
   );
