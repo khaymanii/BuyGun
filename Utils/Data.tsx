@@ -1,4 +1,23 @@
-export const products = [
+type Product = {
+  id: number;
+  productName: string;
+  category: string;
+  brand: string;
+  price: number;
+  inStock: boolean;
+  onSale: boolean;
+  rating: number;
+  caliber: string;
+  weight: string;
+  material: string;
+  image: string;
+  description: string;
+  reviews: number;
+  SKU: string;
+  quantity: number;
+};
+
+export const products: Product[] = [
   {
     id: 1,
     productName: "Glock 19",
