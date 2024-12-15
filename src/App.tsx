@@ -10,12 +10,12 @@ export default function App() {
   return (
     <div className="">
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/contact" element={<Contactus />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/landingpage" element={<LandingPage />} />
       </Routes>
     </div>
   );

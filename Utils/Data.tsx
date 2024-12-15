@@ -153,3 +153,126 @@ export const products = [
     quantity: 10,
   },
 ];
+
+export const categoriesCard = [
+  {
+    id: 1,
+    Image: "/assets/images/coboygunbg.png",
+    name: "Coboy Guns",
+  },
+  {
+    id: 2,
+    Image: "/assets/images/glockbg.png",
+    name: "Glock Gun",
+  },
+  {
+    id: 3,
+    Image: "/assets/images/ak1bg.png",
+    name: "AK-Gun",
+  },
+  {
+    id: 4,
+    Image: "/assets/images/savage.jpg",
+    name: "Savage Gun",
+  },
+  {
+    id: 5,
+    Image: "/assets/images/ak7bg.png",
+    name: "AK- Gun",
+  },
+
+  {
+    id: 6,
+    Image: "/assets/images/b1.jpg",
+    name: "Bullet",
+  },
+  {
+    id: 7,
+    Image: "/assets/images/ak7bg.png",
+    name: "AK-47",
+  },
+
+  {
+    id: 8,
+    Image: "/assets/images/b1.jpg",
+    name: "Bullet",
+  },
+];
+
+export const featuredCard = [
+  {
+    id: 1,
+    image: "/assets/images/ak5bg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "AK-47",
+    description: "A befit riffle",
+    price: "$400.00",
+  },
+  {
+    id: 2,
+    image: "/assets/images/coboygunbg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "Coboy Gun",
+    description: "A short gun",
+    price: "$300.00",
+  },
+  {
+    id: 3,
+    image: "/assets/images/glockbg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "Glock",
+    description: "A hand gun",
+    price: "$200.00",
+  },
+  {
+    id: 4,
+    image: "/assets/images/ak7bg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "Pistol Gun",
+    description: "A good metal gun with bullet",
+    price: "$100.00",
+  },
+  {
+    id: 5,
+    image: "/assets/images/coboygunbg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "Coboy Gun",
+    description: "A short gun",
+    price: "$300.00",
+  },
+  {
+    id: 1,
+    image: "/assets/images/ak5bg.png",
+    span: "HOT",
+    button: "Add to Cart",
+    rate: "/assets/icons/Rating Group.svg",
+    name: "AK-47",
+    description: "A befit raffle",
+    price: "$400.00",
+  },
+];
+
+export const shopCard = [
+  {
+    id: "1",
+    image: "/assets/images/glockbg.png",
+    name: "Glock",
+    link: "Collections",
+  },
+  {
+    id: "2",
+    image: "/assets/images/ak7bg.png",
+    name: "Pistol Gun",
+    link: "Collections",
+  },
+];
