@@ -1,17 +1,38 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes, FaUserCircle, FaSearch } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-white max-w-7xl mx-auto py-4 flex items-center justify-between px-2 sm:px-0">
+    <nav
+      className={`bg-white max-w-7xl mx-auto py-4 flex items-center justify-between px-2 sm:px-4 sticky top-0 z-50
+        ${
+          isScrolled ? "border-b shadow-md" : "border-b-0"
+        } transition-all duration-300`}
+    >
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div
@@ -34,21 +55,26 @@ function Navbar() {
               />
             </div>
             <ul className="space-y-4">
-              <li className="cursor-pointer">Home</li>
-
+              <li className="cursor-pointer">
+                <Link to="/">Home</Link>
+              </li>
               <li className="relative">
                 <div className="flex items-center justify-between cursor-pointer">
-                  <span>Shop</span>
+                  <Link to="/shop">
+                    <span>Shop</span>
+                  </Link>
                 </div>
               </li>
-
               <li className="relative">
                 <div className="flex items-center justify-between cursor-pointer">
-                  <span>Product</span>
+                  <Link to="/product">
+                    <span>Product</span>
+                  </Link>
                 </div>
               </li>
-
-              <li className="cursor-pointer">Contact Us</li>
+              <li className="cursor-pointer">
+                <Link to="/contact">Contact Us</Link>
+              </li>
             </ul>
           </div>
 
@@ -94,21 +120,26 @@ function Navbar() {
           isMenuOpen ? "flex-col lg:flex-row lg:static" : "hidden lg:flex"
         }`}
       >
-        <li className="cursor-pointer">Home</li>
-
+        <li className="cursor-pointer">
+          <Link to="/">Home</Link>
+        </li>
         <li className="relative">
           <div className="flex items-center justify-between cursor-pointer">
-            <span>Shop</span>
+            <Link to="/shop">
+              <span>Shop</span>
+            </Link>
           </div>
         </li>
-
         <li className="relative">
           <div className="flex items-center justify-between cursor-pointer">
-            <span>Product</span>
+            <Link to="/product">
+              <span>Product</span>
+            </Link>
           </div>
         </li>
-
-        <li className="cursor-pointer">Contact Us</li>
+        <li className="cursor-pointer">
+          <Link to="/contact">Contact Us</Link>
+        </li>
       </ul>
 
       {/* Icons Section */}
