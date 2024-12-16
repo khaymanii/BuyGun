@@ -177,7 +177,7 @@ export const categoriesCard = [
   {
     id: 1,
     Image: "/assets/images/coboygunbg.png",
-    name: "Coboy Guns",
+    name: "Coboy Gun",
   },
   {
     id: 2,
@@ -187,7 +187,7 @@ export const categoriesCard = [
   {
     id: 3,
     Image: "/assets/images/ak1bg.png",
-    name: "AK-Gun",
+    name: "Machine Gun",
   },
   {
     id: 4,
@@ -197,7 +197,7 @@ export const categoriesCard = [
   {
     id: 5,
     Image: "/assets/images/ak7bg.png",
-    name: "AK- Gun",
+    name: "Pistol",
   },
 
   {
@@ -207,14 +207,14 @@ export const categoriesCard = [
   },
   {
     id: 7,
-    Image: "/assets/images/ak7bg.png",
-    name: "AK-47",
+    Image: "/assets/images/gun.avif",
+    name: "Short Gun",
   },
 
   {
     id: 8,
-    Image: "/assets/images/b1.jpg",
-    name: "Bullet",
+    Image: "/assets/images/s1.jpg",
+    name: "Sniper",
   },
 ];
 
@@ -225,8 +225,8 @@ export const featuredCard = [
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
-    name: "AK-47",
-    description: "A befit riffle",
+    name: "Sniper",
+    description: "A befit Sniper",
     price: "$400.00",
   },
   {
@@ -257,26 +257,26 @@ export const featuredCard = [
     rate: "/assets/icons/Rating Group.svg",
     name: "Pistol Gun",
     description: "A good metal gun with bullet",
-    price: "$100.00",
+    price: "$187.00",
   },
   {
     id: 5,
-    image: "/assets/images/coboygunbg.png",
+    image: "/assets/images/ak1bg.png",
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
-    name: "Coboy Gun",
-    description: "A short gun",
-    price: "$300.00",
+    name: "Machine Gun",
+    description: "A Long gun",
+    price: "$396.00",
   },
   {
-    id: 1,
-    image: "/assets/images/ak5bg.png",
+    id: 6,
+    image: "/assets/images/ak3bg.png",
     span: "HOT",
     button: "Add to Cart",
     rate: "/assets/icons/Rating Group.svg",
     name: "AK-47",
-    description: "A befit raffle",
+    description: "A befit rifle",
     price: "$400.00",
   },
 ];
