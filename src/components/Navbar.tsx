@@ -67,8 +67,8 @@ function Navbar() {
               </li>
               <li className="relative">
                 <div className="flex items-center justify-between cursor-pointer">
-                  <Link to="/product">
-                    <span>Product</span>
+                  <Link to="/cart">
+                    <span>Cart</span>
                   </Link>
                 </div>
               </li>
@@ -132,8 +132,8 @@ function Navbar() {
         </li>
         <li className="relative">
           <div className="flex items-center justify-between cursor-pointer">
-            <Link to="/product">
-              <span>Product</span>
+            <Link to="/cart">
+              <span>Cart</span>
             </Link>
           </div>
         </li>

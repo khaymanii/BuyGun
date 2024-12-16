@@ -5,6 +5,8 @@ import LandingPage from "./pages/LandingPage";
 import Contactus from "./pages/Contactus";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
+import Checkout from "./pages/Checkout";
+import Cart from "./pages/Cart";
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
         <Route path="/contact" element={<Contactus />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
