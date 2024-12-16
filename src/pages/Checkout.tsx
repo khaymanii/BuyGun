@@ -9,10 +9,12 @@ function Checkout() {
           Checkout{" "}
         </h1>
       </div>
-      <div className="max-w-7xl mx-auto px-4 my-8">
-        <div>
-          <h1 className="text-xl font-semibold mb-4">Billing Address</h1>
-          <form className="flex flex-col lg:w-2/3 md:w-1/2 w-full">
+      <div className="max-w-7xl mx-auto px-4 mt-14 lg:flex-row flex flex-col justify-between">
+        <div className="lg:w-2/3 md:w-full w-full">
+          <h1 className="text-xl font-semibold mb-4 tracking-wider">
+            Billing Address
+          </h1>
+          <form className="flex flex-col w-full">
             <input
               type="text"
               placeholder="Enter your name"
@@ -44,6 +46,33 @@ function Checkout() {
               className="p-2 border outline-none rounded-lg mb-4"
             />
           </form>{" "}
+        </div>
+        <div className="lg:w-96 w-full h-64 bg-black text-white rounded-lg p-4 tracking-wider">
+          <div className="flex items-start justify-between mb-2">
+            {" "}
+            <div>
+              <p className="mb-2 tracking-wider">Total Qty:</p>
+              <p className="mb-2 tracking-wider">Subtotal:</p>
+              <p className="mb-2 tracking-wider">Shipping:</p>
+              <p className="mb-2 tracking-wider">free shipping</p>
+            </div>
+            <div>
+              <p className="mb-2">3</p>
+              <p className="mb-2">$650</p>
+              <p className="mb-2">$0</p>
+            </div>
+          </div>
+          <div className="flex justify-between mb-6">
+            <p className="text-xl font-semibold tracking-wider">Total:</p>
+            <p className="text-xl font-semibold tracking-wider">$650</p>
+          </div>
+          <button
+            title="Place Order Now"
+            type="submit"
+            className="w-full text-center p-1 bg-white text-black rounded-lg font-semibold"
+          >
+            Place Order Now{" "}
+          </button>
         </div>
       </div>
       <Footer />
