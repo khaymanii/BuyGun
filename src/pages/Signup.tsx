@@ -77,7 +77,7 @@ function Signup() {
               required
               className="w-full p-2 border-b border-b-gray-300 rounded"
             />
-            {error && <p className="text-red-500 my-1">{error}</p>}
+            {error && <p className="text-red-500 mt-1">{error}</p>}
 
             <div className="flex flex-row items-center gap-5">
               <input type="checkbox" name="" id="" placeholder="checkbox" />
