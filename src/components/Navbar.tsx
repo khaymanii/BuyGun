@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { FaBars, FaTimes, FaUserCircle, FaSearch } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
+  const { currentUser, loading } = useAuth();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,6 +29,11 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Show loading state while waiting for auth state
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <nav
       className={`bg-white max-w-7xl mx-auto py-4 flex items-center justify-between px-2 sm:px-4 sticky top-0 z-50
@@ -41,7 +49,7 @@ function Navbar() {
         >
           <div className="flex flex-col gap-5">
             <div className="flex items-center justify-between">
-              <h2 className="text-3xl font-semibold">Buygun</h2>
+              <h2 className="lg:text-3xl text-2xl font-semibold">Buygun</h2>
               <button onClick={toggleMenu} className="text-5xl">
                 ×
               </button>
@@ -84,8 +92,8 @@ function Navbar() {
               <div className="flex flex-row items-center justify-between">
                 <span className="text-[15px] font-semibold">Cart</span>
                 <div className="flex flex-row items-center">
-                  <FaCartShopping className="text-2xl mr-2" />
-                  <span className="text-sm bg-gray-300 rounded-full px-2">
+                  <FaCartShopping className="text-2xl mr-1" />
+                  <span className="text-sm bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full  text-white">
                     2
                   </span>
                 </div>
@@ -94,7 +102,7 @@ function Navbar() {
 
             {/* Sign In Button */}
             <button className="w-full mt-5 py-2 bg-black text-white font-semibold rounded-md">
-              Sign In
+              <Link to="/signin">Sign In</Link>
             </button>
 
             {/* Social Media Links */}
@@ -109,7 +117,7 @@ function Navbar() {
 
       {/* Logo Section */}
       <div className="flex items-center">
-        <a href="/" className="text-3xl font-semibold">
+        <a href="/" className="lg:text-3xl text-2xl font-semibold">
           Buygun
         </a>
       </div>
@@ -143,10 +151,25 @@ function Navbar() {
       </ul>
 
       {/* Icons Section */}
-      <div className="flex items-center gap-6">
-        <FaSearch className="text-xl" />
-        <FaUserCircle className="text-xl" />
-        <FaCartShopping className="text-xl" />
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
+          <FaCartShopping className="text-xl" />
+          <span className="text-sm bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full text-white">
+            2
+          </span>
+        </div>
+
+        <div className="flex items-center gap-1">
+          {" "}
+          <FaUserCircle className="text-xl" />
+          {currentUser ? (
+            <p className="text-sm">
+              {currentUser.displayName || currentUser.email}!
+            </p>
+          ) : (
+            <p className="text-sm">Ken</p>
+          )}
+        </div>
       </div>
 
       {/* Mobile Menu Button */}
