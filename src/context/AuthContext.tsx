@@ -97,14 +97,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     email: string,
     password: string
   ): Promise<UserCredential | void> => {
-    setLoading(true);
+    setLoading(true); // Start loading when the sign-in process starts
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
-
       const user = userCredential.user;
 
       // Fetch Firestore data and merge into currentUser
@@ -113,10 +112,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       return userCredential;
     } catch (error) {
-      console.error("Error signin in:", error);
+      console.error("Error signing in:", error);
       throw error;
     } finally {
-      setLoading(false);
+      setLoading(false); // Ensure loading is turned off after async operations
     }
   };
 
@@ -141,11 +140,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         setCurrentUser(null);
       }
-      setLoading(false);
+      setLoading(false); // End loading when authentication state is determined
     });
 
     return unsubscribe; // Cleanup subscription on unmount
-  }, []);
+  }, []); // Empty dependency array ensures this only runs once when the component mounts
 
   // Context value
   const value: AuthContextValue = {

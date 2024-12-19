@@ -31,7 +31,7 @@ function Signup() {
       toast.success("Signup successful! Redirecting to signin page...");
       setTimeout(() => {
         navigate("/signin");
-      }, 3000); // Delay navigation to show toast
+      }, 2000);
     } catch (err) {
       toast.error("Signup failed. Please try again.");
       console.error("Error during signup:", err);

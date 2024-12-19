@@ -1,7 +1,56 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebaseConfig/firebase";
+import { useAuth } from "../context/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function Contactus() {
+  const { currentUser } = useAuth();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Check if the user is logged in
+    if (!currentUser) {
+      toast.error("You must be logged in to submit the form.");
+      setTimeout(() => {
+        navigate("/signup");
+      }, 2000);
+      return;
+    }
+
+    try {
+      // Save form data along with the user's UID
+      await addDoc(collection(db, "contacts"), {
+        uid: currentUser.uid, // Include the user's UID
+        name,
+        email,
+        message,
+        createdAt: new Date(),
+      });
+
+      // Display success toast
+      toast.success("Message sent successfully!");
+
+      // Reset form fields
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error("Error submitting contact form:", err);
+
+      // Display error toast
+      toast.error("Failed to send the message. Please try again.");
+    }
+  };
   return (
     <div>
       <Navbar />
@@ -76,23 +125,31 @@ function Contactus() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 px-4">
-        <form className="flex flex-col md:w-1/2 w-full">
+        <form className="flex flex-col md:w-1/2 w-full" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Your Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
             className="p-2 border outline-none rounded-lg mb-4"
           />
           <input
-            type="text"
+            type="email"
             placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
             className="p-2 border outline-none rounded-lg mb-4"
           />
           <textarea
             className="p-2 border outline-none rounded-lg mb-6 h-40"
             placeholder="Your Message"
-          ></textarea>
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
           <button
-            title="Send Message"
             type="submit"
             className="w-full md:w-1/3 text-center p-2 bg-black text-white rounded-lg"
           >
@@ -108,6 +165,7 @@ function Contactus() {
         </div>
       </div>
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 }
