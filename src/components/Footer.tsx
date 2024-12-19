@@ -193,7 +193,7 @@ function Footer() {
         </div>
 
         <p className="text-xs text-white">
-          &copy; 2022. Company Name. All rights reserved.
+          &copy; 2025 Buygun. All rights reserved.
         </p>
       </div>
     </div>
