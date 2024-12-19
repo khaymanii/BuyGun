@@ -24,7 +24,9 @@ function Signin() {
     try {
       await signIn(data.email, data.password);
       toast.success("Signin successful!");
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (err) {
       toast.error(
         "Signin failed. Please check your email and password details and try again."
