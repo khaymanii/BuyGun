@@ -15,7 +15,7 @@ import {
   UserCredential,
   updateProfile,
 } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebaseConfig/firebase";
 
 // Define the shape of the context value
@@ -47,6 +47,21 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const fetchUserData = async (uid: string) => {
+    try {
+      const userDoc = await getDoc(doc(db, "users", uid));
+      if (userDoc.exists()) {
+        return userDoc.data();
+      } else {
+        console.error("No user data found!");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+      return null;
+    }
+  };
+
   const signUp = async (data: SignUpData): Promise<User | void> => {
     const { displayName, email, password } = data;
 
@@ -67,6 +82,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         createdAt: new Date(),
       });
 
+      // Fetch and merge Firestore data into currentUser
+      const userData = await fetchUserData(user.uid);
+      setCurrentUser({ ...user, ...userData });
+
       return user;
     } catch (error) {
       console.error("Error signing up:", error);
@@ -80,7 +99,19 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   ): Promise<UserCredential | void> => {
     setLoading(true);
     try {
-      return await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+
+      // Fetch Firestore data and merge into currentUser
+      const userData = await fetchUserData(user.uid);
+      setCurrentUser({ ...user, ...userData });
+
+      return userCredential;
     } catch (error) {
       console.error("Error signin in:", error);
       throw error;
@@ -93,6 +124,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logOut = async (): Promise<void> => {
     try {
       await signOut(auth);
+      setCurrentUser(null); // Clear currentUser state on logout
     } catch (error) {
       console.error("Error logging out:", error);
       throw error;
@@ -101,8 +133,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   // Track authentication state
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Fetch Firestore data and merge into currentUser
+        const userData = await fetchUserData(user.uid);
+        setCurrentUser({ ...user, ...userData });
+      } else {
+        setCurrentUser(null);
+      }
       setLoading(false);
     });
 
