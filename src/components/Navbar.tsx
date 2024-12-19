@@ -162,13 +162,7 @@ function Navbar() {
         <div className="flex items-center gap-1">
           {" "}
           <FaUserCircle className="text-xl" />
-          {currentUser ? (
-            <p className="text-sm">
-              {currentUser.displayName || currentUser.email}!
-            </p>
-          ) : (
-            <p className="text-sm">Ken</p>
-          )}
+          {currentUser && <p className="text-sm">{currentUser.displayName}</p>}
         </div>
       </div>
 
