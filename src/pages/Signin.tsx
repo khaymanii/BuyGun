@@ -1,27 +1,38 @@
 import { Link, useNavigate } from "react-router-dom";
 import SignupImage from "/assets/images/ak5.jpg";
 import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+interface SigninFormInputs {
+  email: string;
+  password: string;
+}
 
 function Signin() {
   const { signIn, loading } = useAuth();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(""); // Reset error message on submit
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SigninFormInputs>();
 
+  const onSubmit: SubmitHandler<SigninFormInputs> = async (data) => {
     try {
-      await signIn(email, password);
+      await signIn(data.email, data.password);
+      toast.success("Signin successful!");
       navigate("/");
     } catch (err) {
-      setError("Signin failed. Please check your credentials and try again.");
+      toast.error(
+        "Signin failed. Please check your email and password details and try again."
+      );
       console.error("Error during signin:", err);
     }
   };
+
   return (
     <div className="flex h-screen tablet:flex-col lg:fixed">
       <div className="flex-1 items-center justify-center">
@@ -32,7 +43,7 @@ function Signin() {
           <h2 className="text-3xl font-semibold">Buygun</h2>
           <form
             className="w-4/4 max-w-md  space-y-4 mobile:px-4 mb-8"
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <h2 className="text-2xl font-semibold">Sign In</h2>
             <div className="flex flex-row items-center gap-2">
@@ -44,20 +55,38 @@ function Signin() {
             <input
               type="text"
               placeholder="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                  message: "Invalid email address",
+                },
+              })}
               className="w-full p-2 border-b border-b-gray-300 rounded ring-offset-0"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
+
             <input
               type="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password must be at least 6 characters long",
+                },
+              })}
               className="w-full p-2 border-b border-b-gray-300 rounded"
             />
-            {error && <p className="text-red-500 mt-1">{error}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.password.message}
+              </p>
+            )}
 
             <div className="flex flex-row items-center gap-5">
               <div className="flex flex-row items-center gap-48 mobile:gap-10">
@@ -65,7 +94,7 @@ function Signin() {
                   <input type="checkbox" name="checkbox" id="" placeholder="" />
                   <span>Remember me</span>
                 </div>
-                <a href="#">Forget password</a>
+                <a href="#">Forgot password</a>
               </div>
             </div>
             <button
@@ -78,6 +107,7 @@ function Signin() {
           </form>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 }
