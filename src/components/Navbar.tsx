@@ -4,9 +4,11 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 
 function Navbar() {
   const { currentUser, loading, logOut } = useAuth();
+  const { cartCount } = useCart();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,10 +85,10 @@ function Navbar() {
               <li className="cursor-pointer">
                 <Link to="/contact">Contact Us</Link>
               </li>
-              <li className="cursor-pointer text-green-500 font-semibold">
+              <li className="cursor-pointer text-green-400 font-semibold">
                 <Link to="/signup">Sign up</Link>
               </li>{" "}
-              <li className="cursor-pointer text-red-500 font-semibold">
+              <li className="cursor-pointer text-red-400 font-semibold">
                 <Link to="/" onClick={logOut}>
                   Log out
                 </Link>
@@ -100,10 +102,15 @@ function Navbar() {
               <div className="flex flex-row items-center justify-between">
                 <span className="text-[15px] font-semibold">Cart</span>
                 <div className="flex flex-row items-center">
-                  <FaCartShopping className="text-2xl mr-1" />
-                  <span className="text-sm bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full  text-white">
-                    2
-                  </span>
+                  <Link to="/cart">
+                    {" "}
+                    <FaCartShopping className="lg:text-xl md:text-2xl text-xl mr-1" />
+                  </Link>
+                  {cartCount && cartCount > 0 && (
+                    <span className="text-sm bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full  text-white">
+                      {cartCount}{" "}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -161,15 +168,21 @@ function Navbar() {
       {/* Icons Section */}
       <div className="flex items-center gap-3">
         <div className="flex items-center gap-1">
-          <FaCartShopping className="lg:text-xl md:text-2xl" />
-          <span className="text-xs bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full text-white">
-            2
-          </span>
+          <Link to="/cart">
+            {" "}
+            <FaCartShopping className="lg:text-xl md:text-2xl text-xl" />
+          </Link>
+
+          {cartCount && cartCount > 0 && (
+            <span className="text-sm bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full  text-white">
+              {cartCount}{" "}
+            </span>
+          )}
         </div>
 
         <div className="flex items-center gap-1">
           {" "}
-          <FaUserCircle className="lg:text-xl md:text-2xl" />
+          <FaUserCircle className="lg:text-xl md:text-2xl text-xl" />
           {currentUser && <p className="text-sm">{currentUser.displayName}</p>}
         </div>
         <div className="lg:flex gap-3 hidden">

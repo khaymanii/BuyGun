@@ -1,6 +1,8 @@
 import { featuredCard } from "../../Utils/Data";
-
+import { useCart } from "../context/CartContext";
 export default function Featured() {
+  const { addToCart } = useCart();
+
   return (
     <div className="flex flex-col gap-4 mt-10 mb-10 max-w-7xl mx-auto w-full">
       <div className="flex flex-row text-center max-w-7xl mx-auto">
@@ -21,7 +23,10 @@ export default function Featured() {
               <span className="absolute top-2 left-2 bg-white text-black px-2 text-sm rounded">
                 {card.span}
               </span>
-              <button className="absolute bottom-4 left-4 bg-black text-white px-4 py-2 rounded-md opacity-90 mobile:px-3 mobile:py-1 text-xs">
+              <button
+                className="absolute bottom-4 left-4 bg-black text-white px-4 py-2 rounded-md opacity-90 mobile:px-3 mobile:py-1 text-xs"
+                onClick={addToCart}
+              >
                 {card.button}
               </button>
             </div>
