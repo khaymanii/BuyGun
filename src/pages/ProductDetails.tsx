@@ -2,10 +2,12 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useParams } from "react-router-dom";
 import { products } from "../../Utils/Data";
+import { useCart } from "../context/CartContext";
 
 function ProductDetails() {
   const { id } = useParams(); // Get product ID from the URL
   const product = products.find((item) => item.id === parseInt(id || "")); // Find the product by ID
+  const { addToCart } = useCart();
 
   if (!product) {
     return <h2>Product not found</h2>;
@@ -59,7 +61,10 @@ function ProductDetails() {
           <p className="sm:text-lg lg:text-xl text-lg mb-8 text-gray-500">
             {product.description}
           </p>
-          <button className="text-white bg-black px-4 py-3 w-full sm:w-[50%] rounded-lg font-semibold">
+          <button
+            className="text-white bg-black px-4 py-3 w-full sm:w-[50%] rounded-lg font-semibold"
+            onClick={addToCart}
+          >
             Add to Cart
           </button>
         </div>
