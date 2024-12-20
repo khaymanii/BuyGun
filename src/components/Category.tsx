@@ -1,4 +1,5 @@
 import { categoriesCard } from "../../Utils/Data";
+import { Link } from "react-router-dom";
 export default function Category() {
   return (
     <div className="flex flex-col gap-10 mb-10 items-center">
@@ -35,7 +36,7 @@ export default function Category() {
               type="submit"
               className="bg-green-600 rounded-md w-[20%] mobile:w-[50%] px-3 py-1 mt-5 text-white"
             >
-              Shop Now
+              <Link to="/shop"> Shop Now</Link>
             </button>
           </div>
         </div>

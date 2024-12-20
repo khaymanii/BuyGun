@@ -8,7 +8,9 @@ import React, {
 } from "react";
 import { db } from "../firebaseConfig/firebase";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { useAuth } from "./AuthContext"; // Import AuthContext to access currentUser
+import { useAuth } from "./AuthContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface CartContextValue {
   cartCount: number | null; // Allow `null` to represent the loading state
@@ -62,11 +64,13 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         await updateDoc(doc(db, "carts", currentUser.uid), {
           cartCount: newCount,
         });
+        toast.success("Item added to cart");
       } catch (error) {
         console.error("Error updating cart count:", error);
       }
     } else {
       console.warn("User must be logged in to add items to the cart");
+      toast.error("Please sign in to add items to the cart");
     }
   };
 

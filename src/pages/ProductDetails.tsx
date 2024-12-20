@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { useParams } from "react-router-dom";
 import { products } from "../../Utils/Data";
 import { useCart } from "../context/CartContext";
+import { ToastContainer } from "react-toastify";
 
 function ProductDetails() {
   const { id } = useParams(); // Get product ID from the URL
@@ -70,6 +71,7 @@ function ProductDetails() {
         </div>
       </div>
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 }
