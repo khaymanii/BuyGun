@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
-  const { currentUser, loading } = useAuth();
+  const { currentUser, loading, logOut } = useAuth();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,6 +83,14 @@ function Navbar() {
               <li className="cursor-pointer">
                 <Link to="/contact">Contact Us</Link>
               </li>
+              <li className="cursor-pointer text-green-500 font-semibold">
+                <Link to="/signup">Sign up</Link>
+              </li>{" "}
+              <li className="cursor-pointer text-red-500 font-semibold">
+                <Link to="/" onClick={logOut}>
+                  Log out
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -151,18 +159,29 @@ function Navbar() {
       </ul>
 
       {/* Icons Section */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <div className="flex items-center gap-1">
-          <FaCartShopping className="text-xl" />
-          <span className="text-sm bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full text-white">
+          <FaCartShopping className="lg:text-xl md:text-2xl" />
+          <span className="text-xs bg-red-500 w-5 h-5 text-center flex items-center justify-center rounded-full text-white">
             2
           </span>
         </div>
 
         <div className="flex items-center gap-1">
           {" "}
-          <FaUserCircle className="text-xl" />
+          <FaUserCircle className="lg:text-xl md:text-2xl" />
           {currentUser && <p className="text-sm">{currentUser.displayName}</p>}
+        </div>
+        <div className="lg:flex gap-3 hidden">
+          {" "}
+          <span className="cursor-pointer text-green-500 font-semibold">
+            <Link to="/signup">Sign up</Link>
+          </span>{" "}
+          <span className="cursor-pointer text-red-500 font-semibold">
+            <Link to="/" onClick={logOut}>
+              Log out
+            </Link>
+          </span>
         </div>
       </div>
 
