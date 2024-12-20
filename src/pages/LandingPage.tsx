@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import ShopCollection from "../components/ShopCollection";
 import SocialMedia from "../components/SocialMedia";
+import { ToastContainer } from "react-toastify";
 
 export default function LandingPage() {
   return (
@@ -18,6 +19,7 @@ export default function LandingPage() {
       <Newsletter />
       <SocialMedia />
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 }

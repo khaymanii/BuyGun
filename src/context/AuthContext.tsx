@@ -17,6 +17,8 @@ import {
 } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebaseConfig/firebase";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Define the shape of the context value
 interface AuthContextValue {
@@ -81,6 +83,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         email: user.email,
         createdAt: new Date(),
       });
+      toast.success("Signin successful!");
 
       // Fetch and merge Firestore data into currentUser
       const userData = await fetchUserData(user.uid);
@@ -88,6 +91,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       return user;
     } catch (error) {
+      toast.error(
+        "Signin failed. Please check your email and password details and try again."
+      );
       console.error("Error signing up:", error);
       throw error;
     }
@@ -105,6 +111,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         password
       );
       const user = userCredential.user;
+      toast.success("Signin successful!");
 
       // Fetch Firestore data and merge into currentUser
       const userData = await fetchUserData(user.uid);
@@ -112,6 +119,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       return userCredential;
     } catch (error) {
+      toast.error(
+        "Signin failed. Please check your email and password details and try again."
+      );
       console.error("Error signing in:", error);
       throw error;
     } finally {
@@ -123,8 +133,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logOut = async (): Promise<void> => {
     try {
       await signOut(auth);
-      setCurrentUser(null); // Clear currentUser state on logout
+      setCurrentUser(null);
+      toast.success("Logout successful");
     } catch (error) {
+      toast.error("Error logging out. Please try again.");
       console.error("Error logging out:", error);
       throw error;
     }

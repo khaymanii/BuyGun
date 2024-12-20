@@ -2,6 +2,7 @@ import { products } from "../../Utils/Data";
 import ShopCard from "../components/ShopCard";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { ToastContainer } from "react-toastify";
 
 function Shop() {
   return (
@@ -28,6 +29,7 @@ function Shop() {
         ))}{" "}
       </div>
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 }
