@@ -7,7 +7,7 @@ function ShopCard({
   name,
   price,
 }: {
-  id: number;
+  id: string;
   image: string;
   name: string;
   price: string;
@@ -31,7 +31,7 @@ function ShopCard({
       </Link>
       <div
         className="w-8 h-8 bg-black rounded-full text-white font-bold flex items-center justify-center mt-2"
-        onClick={addToCart}
+        onClick={() => addToCart({ id, name, price, image })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

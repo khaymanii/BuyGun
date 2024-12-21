@@ -62,7 +62,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const addToCart = async (item: {
     id: string;
     name: string;
-    price: string;
+    price: string | number;
   }) => {
     if (currentUser) {
       const userCartRef = doc(db, "carts", currentUser.uid);
