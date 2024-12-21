@@ -7,14 +7,19 @@ import React, {
   ReactNode,
 } from "react";
 import { db } from "../firebaseConfig/firebase";
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useAuth } from "./AuthContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface CartContextValue {
   cartCount: number | null; // Allow `null` to represent the loading state
-  addToCart: () => Promise<void>;
+  addToCart: (item: {
+    id: string;
+    name: string;
+    price: string;
+    image: string;
+  }) => Promise<void>;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -54,19 +59,41 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   }, [currentUser]);
 
   // Function to add items to the cart
-  const addToCart = async () => {
+  const addToCart = async (item: {
+    id: string;
+    name: string;
+    price: string;
+  }) => {
     if (currentUser) {
-      try {
-        const newCount = (cartCount || 0) + 1;
-        setCartCount(newCount);
+      const userCartRef = doc(db, "carts", currentUser.uid);
 
-        // Update cart count in Firestore
-        await updateDoc(doc(db, "carts", currentUser.uid), {
-          cartCount: newCount,
+      try {
+        // Ensure cart document exists
+        const userCartDoc = await getDoc(userCartRef);
+
+        if (!userCartDoc.exists()) {
+          await setDoc(userCartRef, {
+            cartCount: 0,
+            items: [],
+          });
+        }
+
+        // Fetch current cartCount from Firestore
+        const currentCartCount = userCartDoc.exists()
+          ? userCartDoc.data()?.cartCount || 0
+          : 0;
+
+        // Update cartCount and items
+        await updateDoc(userCartRef, {
+          cartCount: currentCartCount + 1,
+          items: arrayUnion(item),
         });
-        toast.success("Item added to cart");
+
+        setCartCount(currentCartCount + 1);
+        toast.success(`${item.name} added to cart`);
       } catch (error) {
-        console.error("Error updating cart count:", error);
+        console.error("Error updating cart:", error);
+        toast.error("An error occurred while adding the item to your cart");
       }
     } else {
       console.warn("User must be logged in to add items to the cart");
