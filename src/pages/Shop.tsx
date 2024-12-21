@@ -1,10 +1,39 @@
-import { products } from "../../Utils/Data";
+// import { products } from "../../Utils/Data";
 import ShopCard from "../components/ShopCard";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { ToastContainer } from "react-toastify";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebaseConfig/firebase";
 
 function Shop() {
+  interface Product {
+    id: string;
+    image: string;
+    productName: string;
+    price: number;
+  }
+
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "products"));
+        const productsData = querySnapshot.docs.map((doc) => ({
+          id: doc.id, // Firestore's document ID is a string
+          ...doc.data(),
+        })) as Product[];
+        setProducts(productsData);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       {" "}
@@ -18,7 +47,7 @@ function Shop() {
         />
       </div>
       <div className="max-w-7xl mx-auto flex-wrap justify-between flex">
-        {products.map((product) => (
+        {products.map((product: Product) => (
           <ShopCard
             id={product.id}
             key={product.id}

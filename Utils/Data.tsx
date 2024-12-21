@@ -4,16 +4,12 @@ type Product = {
   category: string;
   brand: string;
   price: number;
-  inStock: boolean;
-  onSale: boolean;
-  rating: number;
   caliber: string;
   weight: string;
   material: string;
   image: string;
   description: string;
-  reviews: number;
-  SKU: string;
+
   quantity: number;
 };
 
@@ -24,17 +20,12 @@ export const products: Product[] = [
     category: "Handgun",
     brand: "Glock",
     price: 499.99,
-    inStock: true,
-    onSale: false,
-    rating: 4.8,
     caliber: "9mm",
     weight: "670g",
     material: "Polymer",
     image: "/assets/images/ak7bg.png",
     description:
       "The Glock 19 Gen 5 is a compact 9mm handgun perfect for personal defense.",
-    reviews: 150,
-    SKU: "GLK-19G5-9MM",
     quantity: 25,
   },
   {
@@ -43,17 +34,12 @@ export const products: Product[] = [
     category: "Shotgun",
     brand: "Remington",
     price: 399.99,
-    inStock: true,
-    onSale: true,
-    rating: 4.6,
     caliber: "12 gauge",
     weight: "3kg",
     material: "Steel",
     image: "/assets/images/ak5bg.png",
     description:
       "The Remington 870 Tactical is known for its versatility and reliability in self-defense.",
-    reviews: 95,
-    SKU: "REM-870T-12G",
     quantity: 12,
   },
   {
@@ -62,17 +48,12 @@ export const products: Product[] = [
     category: "Ammunition",
     brand: "Winchester",
     price: 166.99,
-    inStock: true,
-    onSale: false,
-    rating: 4.9,
     caliber: "5.56mm",
     weight: "62gr",
     material: "Brass casing",
     image: "/assets/images/ak1bg.png",
     description:
       "Winchester 5.56 NATO ammunition offers reliable performance for target shooting and defense.",
-    reviews: 300,
-    SKU: "WIN-556NATO-62GR",
     quantity: 100,
   },
   {
@@ -81,17 +62,12 @@ export const products: Product[] = [
     category: "Handgun",
     brand: "Sig Sauer",
     price: 549.99,
-    inStock: false,
-    onSale: false,
-    rating: 4.7,
     caliber: "9mm",
     weight: "833g",
     material: "Polymer and Stainless Steel",
     image: "/assets/images/ak2bg.png",
     description:
       "The Sig Sauer P320 is a modular and versatile full-size handgun for military and law enforcement.",
-    reviews: 220,
-    SKU: "SIG-P320-9MM",
     quantity: 0,
   },
   {
@@ -100,17 +76,12 @@ export const products: Product[] = [
     category: "Ammunition",
     brand: "Federal",
     price: 566.99,
-    inStock: true,
-    onSale: false,
-    rating: 4.9,
     caliber: ".308 Win",
     weight: "168gr",
     material: "Brass casing",
     image: "/assets/images/ak4bg.png",
     description:
       "Premium .308 Winchester ammunition designed for precision and hunting applications.",
-    reviews: 80,
-    SKU: "FED-308WIN-168GR",
     quantity: 50,
   },
 
@@ -120,17 +91,12 @@ export const products: Product[] = [
     category: "Ammunition",
     brand: "Hornady",
     price: 78.99,
-    inStock: true,
-    onSale: false,
-    rating: 4.8,
     caliber: "9mm",
     weight: "115gr",
     material: "Nickel-Plated Brass",
     image: "/assets/images/coboygunbg.png",
     description:
       "Hornady Critical Defense is designed for personal protection and ensures consistent expansion.",
-    reviews: 180,
-    SKU: "HOR-CRD-9MM-115GR",
     quantity: 200,
   },
   {
@@ -139,17 +105,12 @@ export const products: Product[] = [
     category: "Handgun",
     brand: "Smith & Wesson",
     price: 449.99,
-    inStock: true,
-    onSale: false,
-    rating: 4.7,
     caliber: "9mm",
     weight: "620g",
     material: "Polymer",
     image: "/assets/images/glockbg.png",
     description:
       "The M&P Shield offers a lightweight, slim profile for easy concealed carry.",
-    reviews: 120,
-    SKU: "SW-MP9-9MM",
     quantity: 30,
   },
   {
@@ -158,17 +119,13 @@ export const products: Product[] = [
     category: "AK",
     brand: "Smith & Wesson",
     price: 646.99,
-    inStock: true,
-    onSale: false,
-    rating: 4.7,
     caliber: "17mm",
     weight: "620g",
     material: "Polymer",
     image: "/assets/images/ak3bg.png",
     description:
       "The M&P Shield offers a lightweight, slim profile for easy concealed carry.",
-    reviews: 120,
-    SKU: "SW-MP9-9MM",
+
     quantity: 10,
   },
 ];
