@@ -1,4 +1,3 @@
-//import { featuredCard } from "../../Utils/Data";
 import { useCart } from "../context/CartContext";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
