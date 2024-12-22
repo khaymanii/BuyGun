@@ -19,7 +19,7 @@ export default function Category() {
           className="w-1/2 object-cover mobile:order-2 mobile:w-full"
         />
         <div className=" w-1/2 h-full mobile:order-1 mobile:w-full">
-          <div className="flex flex-col px-2 py-8 gap-3">
+          <div className="flex flex-col mobile:px-2 px-6 py-8 gap-3">
             <h2 className="text-green-600 text-sm">LIMIT EDITION</h2>
             <p className="text-white text-[30px]">Hurry up! 30% OFF</p>
             <span className="text-gray-300">

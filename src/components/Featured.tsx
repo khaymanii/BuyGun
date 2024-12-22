@@ -46,11 +46,15 @@ export default function Featured() {
             key={card.id}
           >
             <div className="relative flex flex-col items-center">
-              <img
-                src={card.image}
-                alt=""
-                className="h-60 w-full object-cover bg-gray-100 rounded-md mobile:h-40"
-              />
+              <div className="bg-gray-100 w-full flex items-center justify-center">
+                {" "}
+                <img
+                  src={card.image}
+                  alt=""
+                  className="h-60 w-full mobile:w-60 object-cover rounded-md mobile:h-40"
+                />{" "}
+              </div>
+
               <span className="absolute top-2 left-2 bg-white text-black px-2 text-sm rounded">
                 {card.span}
               </span>
