@@ -1,22 +1,19 @@
 export default function Newsletter() {
   return (
-    <div className="flex flex-row bg-black items-center justify-between">
-      <img
-        src="/assets/images/ak1bg.png"
-        alt=""
-        className="h-40 w-80 mobile:hidden"
-      />
-      <div className="flex flex-col items-center gap-4 p-3">
-        <h2 className="text-white font-semibold">Join Our Newsletter</h2>
+    <div className=" bg-black ">
+      <div className="flex flex-col items-center justify-center gap-4 px-4 py-8">
+        <h2 className="text-white font-semibold text-xl">
+          Join Our Newsletter
+        </h2>
         <p className="text-white">
           Sign up for deals, new products and promotions
         </p>
-        <form className="flex flex-row items-center w-full">
+        <form className="flex flex-row items-center">
           <input
             type="email"
             name="Email"
             id="Email"
-            className="bg-transparent border-b-2 focus:outline-none w-full text-white mr-2"
+            className="bg-transparent border-b-2 focus:outline-none text-white mr-2 w-[100%]"
             placeholder="Email Address"
           />
           <button
@@ -27,11 +24,6 @@ export default function Newsletter() {
           </button>
         </form>
       </div>
-      <img
-        src="/assets/images/ak4bg.png"
-        alt=""
-        className="h-40 mobile:hidden"
-      />
     </div>
   );
 }

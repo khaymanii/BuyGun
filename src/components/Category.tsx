@@ -19,7 +19,7 @@ export default function Category() {
           className="w-1/2 object-cover mobile:order-2 mobile:w-full"
         />
         <div className=" w-1/2 h-full mobile:order-1 mobile:w-full">
-          <div className="flex flex-col px-8 py-8 gap-3">
+          <div className="flex flex-col px-2 py-8 gap-3">
             <h2 className="text-green-600 text-sm">LIMIT EDITION</h2>
             <p className="text-white text-[30px]">Hurry up! 30% OFF</p>
             <span className="text-gray-300">
@@ -34,7 +34,7 @@ export default function Category() {
             </div>
             <button
               type="submit"
-              className="bg-green-600 rounded-md w-[20%] mobile:w-[50%] px-3 py-1 mt-5 text-white"
+              className="bg-green-500 rounded-md w-[20%] mobile:w-[50%] px-3 py-2 mt-5 text-white text-nowrap"
             >
               <Link to="/shop"> Shop Now</Link>
             </button>
