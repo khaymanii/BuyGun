@@ -16,7 +16,7 @@ export default function Newsletter() {
             type="email"
             name="Email"
             id="Email"
-            className="bg-transparent border-b-2 focus:outline-none w-full"
+            className="bg-transparent border-b-2 focus:outline-none w-full text-white mr-2"
             placeholder="Email Address"
           />
           <button
