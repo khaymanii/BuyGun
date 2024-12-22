@@ -9,9 +9,9 @@ export default function ShopCollection() {
       </h2>
 
       {/* Shop Collection Content */}
-      <div className="flex flex-col sm:flex-row items-center gap-8">
+      <div className="flex flex-col sm:flex-row items-center gap-4 mobile:gap-4">
         {/* Main Image Section */}
-        <div className="flex flex-col bg-gray-100 p-4 rounded-md sm:w-[500px] md:w-[600px]">
+        <div className="flex flex-col bg-gray-100 p-4 rounded-md sm:w-[500px] md:w-[520px] lg:w-[520px]">
           <img
             src="/assets/images/ak5bg.png"
             alt=""
@@ -30,14 +30,14 @@ export default function ShopCollection() {
               key={index}
             >
               <div className="flex flex-col text-center sm:text-left">
-                <h2 className="font-semibold text-base sm:text-lg">
+                <h2 className="font-semibold text-lg sm:text-xl">
                   {card.name}
                 </h2>
               </div>
               <img
                 src={card.image}
                 alt=""
-                className="h-40 w-full sm:h-48 sm:w-48 object-cover rounded-md mt-3 sm:mt-0 sm:ml-4"
+                className="h-40 w-full mobile:w-60 sm:h-48 sm:w-48 object-cover rounded-md mt-3 sm:mt-0 sm:ml-4"
               />
             </div>
           ))}
