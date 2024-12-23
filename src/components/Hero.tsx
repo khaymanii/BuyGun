@@ -3,10 +3,10 @@ import backgroundImage from "/assets/images/ak4bg.png";
 export default function Hero() {
   return (
     <div className="bg-black">
-      <div className="flex mobile:flex-col max-w-7xl mx-auto">
-        <div className="flex-1 items-center justify-center mobile:order-2 mobile:pb-10">
+      <div className="flex mobile:flex-col max-w-7xl mx-auto tablet:items-center">
+        <div className="flex-1 items-center justify-center mobile:order-2 mobile:pb-10 tablet:px-5">
           <div className="flex flex-col items-start gap-5 py-28 mobile:items-center mobile:p-4">
-            <h2 className="text-white font-semibold text-5xl w-[90%] mobile:w-full mobile:text-center">
+            <h2 className="text-white font-semibold text-5xl w-[90%] mobile:w-full mobile:text-center tablet:text-4xl">
               More Than a Tool. It's a Statement.
             </h2>
             <span className="text-white w-[80%] opacity-80 mobile:w-full mobile:text-center">

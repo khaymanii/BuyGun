@@ -39,7 +39,7 @@ export default function Featured() {
       <div className="flex flex-row text-center max-w-7xl mx-auto">
         <h2 className="font-semibold text-3xl">Featured</h2>
       </div>
-      <div className="flex flex-wrap justify-between gap-5 items-center mobile:grid mobile:grid-cols-1 mobile:px-4 sm:grid-cols-2 md:gap-6 md:grid-cols-3">
+      <div className="flex flex-wrap justify-between gap-5 items-center mobile:grid mobile:grid-cols-1 mobile:px-4 tablet:grid tablet:grid-cols-3 tablet:mx-3">
         {cards.map((card: FeaturedCard) => (
           <div
             className="flex flex-col bg-white rounded-lg shadow-md p-4 w-full sm:w-[300px] md:w-[250px] lg:w-[350px]"

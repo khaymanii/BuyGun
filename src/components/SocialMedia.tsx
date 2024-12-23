@@ -9,7 +9,7 @@ export default function SocialMedia() {
         </p>
         <a href="#">@Buygun_official</a>
       </div>
-      <div className="grid gap-0 w-full grid-cols-1 mobile:grid-cols-2 lg:grid-cols-9">
+      <div className="grid gap-0 w-full grid-cols-1 mobile:grid-cols-2 lg:grid-cols-9 tablet:grid-cols-3">
         <img
           src="/assets/images/ak9.jpg"
           alt=""
@@ -41,7 +41,7 @@ export default function SocialMedia() {
           className="w-full h-28 object-cover"
         />
         <img
-          src="/assets/images/baretta.jpg"
+          src="/assets/images/barreta.jpg"
           alt=""
           className="w-full h-28 object-cover"
         />
