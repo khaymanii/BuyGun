@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 function Checkout() {
@@ -47,7 +48,7 @@ function Checkout() {
             />
           </form>{" "}
         </div>
-        <div className="lg:w-96 w-full h-64 bg-black text-white rounded-lg p-4 tracking-wider">
+        <div className="lg:w-96 w-full h-72 bg-black text-white rounded-lg p-4 tracking-wider">
           <div className="flex items-start justify-between mb-2">
             {" "}
             <div>
@@ -62,20 +63,21 @@ function Checkout() {
               <p className="mb-2">$0</p>
             </div>
           </div>
-          <div className="flex justify-between mb-6">
+          <div className="flex justify-between mb-12">
             <p className="text-xl font-semibold tracking-wider">Total:</p>
             <p className="text-xl font-semibold tracking-wider">$650</p>
           </div>
           <button
             title="Place Order Now"
             type="submit"
-            className="w-full text-center p-1 bg-white text-black rounded-lg font-semibold"
+            className="w-full text-center p-2 bg-white text-black rounded-lg font-semibold"
           >
             Place Order Now{" "}
           </button>
         </div>
       </div>
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 }
