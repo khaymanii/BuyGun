@@ -32,12 +32,17 @@ export default function Category() {
               <span className="bg-white px-2 py-1 font-semibold">45</span>
               <span className="bg-white px-2 py-1 font-semibold">05</span>
             </div>
-            <button
-              type="submit"
-              className="bg-green-500 rounded-md w-[20%] mobile:w-[50%] px-3 py-2 mt-5 text-white text-nowrap"
-            >
-              <Link to="/shop"> Shop Now</Link>
-            </button>
+
+            <Link to="/shop">
+              {" "}
+              <button
+                type="submit"
+                className="bg-green-500 rounded-md w-[20%] mobile:w-[50%] px-3 py-2 mt-5 text-white text-nowrap"
+              >
+                {" "}
+                Shop Now{" "}
+              </button>
+            </Link>
           </div>
         </div>
       </div>
