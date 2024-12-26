@@ -3,8 +3,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Table from "../components/Table";
 import { ToastContainer } from "react-toastify";
+import { useCart } from "../context/CartContext";
 
 function Cart() {
+  const { subtotal } = useCart();
+
   return (
     <div>
       <Navbar />
@@ -20,7 +23,9 @@ function Cart() {
           {" "}
           <div className="flex justify-between mb-6">
             <p className="text-2xl font-semibold tracking-wider">Subtotal:</p>
-            <p className="text-2xl font-semibold tracking-wider">$650</p>
+            <p className="text-2xl font-semibold tracking-wider">
+              ${subtotal.toFixed(2)}
+            </p>
           </div>
           <p className="text-white tracking-wider text-lg mb-12">
             Taxes and shipping will calculate in checkout

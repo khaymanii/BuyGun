@@ -10,7 +10,7 @@ interface Product {
   id: string;
   productName: string;
   image: string;
-  price: string | number;
+  price: number;
   brand: string;
   category: string;
   caliber: string;
@@ -159,7 +159,7 @@ function ProductDetails() {
               addToCart({
                 id: product.id,
                 name: product.productName,
-                price: product.price.toString(),
+                price: product.price,
                 image: product.image,
               })
             }

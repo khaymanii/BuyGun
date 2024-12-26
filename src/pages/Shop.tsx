@@ -53,7 +53,7 @@ function Shop() {
             key={product.id}
             image={product.image}
             name={product.productName}
-            price={`$${product.price.toFixed(2)}`}
+            price={product.price}
           />
         ))}{" "}
       </div>

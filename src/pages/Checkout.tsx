@@ -1,7 +1,10 @@
 import { ToastContainer } from "react-toastify";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useCart } from "../context/CartContext";
 function Checkout() {
+  const { subtotal } = useCart();
+
   return (
     <div>
       <Navbar />
@@ -52,20 +55,21 @@ function Checkout() {
           <div className="flex items-start justify-between mb-2">
             {" "}
             <div>
-              <p className="mb-2 tracking-wider">Total Qty:</p>
               <p className="mb-2 tracking-wider">Subtotal:</p>
               <p className="mb-2 tracking-wider">Shipping:</p>
               <p className="mb-2 tracking-wider">free shipping</p>
             </div>
             <div>
-              <p className="mb-2">3</p>
-              <p className="mb-2">$650</p>
+              <p className="mb-2"> ${subtotal.toFixed(2)}</p>
               <p className="mb-2">$0</p>
             </div>
           </div>
           <div className="flex justify-between mb-12">
             <p className="text-xl font-semibold tracking-wider">Total:</p>
-            <p className="text-xl font-semibold tracking-wider">$650</p>
+            <p className="text-xl font-semibold tracking-wider">
+              {" "}
+              ${subtotal.toFixed(2)}
+            </p>
           </div>
           <button
             title="Place Order Now"
