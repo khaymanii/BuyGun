@@ -10,7 +10,7 @@ function ShopCard({
   id: string;
   image: string;
   name: string;
-  price: string;
+  price: number;
 }) {
   const { addToCart } = useCart();
 

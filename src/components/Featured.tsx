@@ -11,7 +11,7 @@ type FeaturedCard = {
   rate: string;
   name: string;
   description: string;
-  price: string;
+  price: number;
 };
 
 export default function Featured() {
@@ -77,7 +77,9 @@ export default function Featured() {
                 {card.name}
               </h2>
               <p className="text-gray-600 text-sm">{card.description}</p>
-              <span className="font-bold text-gray-900 mt-2">{card.price}</span>
+              <span className="font-bold text-gray-900 mt-2">
+                ${card.price}
+              </span>
             </div>
           </div>
         ))}
