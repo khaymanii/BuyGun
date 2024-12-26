@@ -26,7 +26,7 @@ export default function ShopCollection() {
         <div className="flex flex-col gap-4 w-full sm:w-auto">
           {shopCard.map((card, index) => (
             <div
-              className="flex flex-col sm:flex-row items-center bg-gray-100 p-3 rounded-md"
+              className="flex flex-col sm:flex-row items-center bg-gray-100 p-3 tablet:p-6 tablet:px-8 rounded-md"
               key={index}
             >
               <div className="flex flex-col text-center sm:text-left">
@@ -37,7 +37,7 @@ export default function ShopCollection() {
               <img
                 src={card.image}
                 alt=""
-                className="h-40 w-full mobile:w-60 sm:h-48 sm:w-48 object-cover rounded-md mt-3 sm:mt-0 sm:ml-4"
+                className="h-40 w-full mobile:w-60 tablet:w-48 sm:h-48 sm:w-48 object-cover rounded-md mt-3 sm:mt-0 sm:ml-4"
               />
             </div>
           ))}
