@@ -24,7 +24,7 @@ function ShopCard({
           <div className="flex items-center justify-between">
             <div>
               <p className="font-semibold text-xl">{name}</p>
-              <p className="font-semibold text-lg">{price}</p>
+              <p className="font-semibold text-lg">${price}</p>
             </div>
           </div>
         </div>
