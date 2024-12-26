@@ -21,6 +21,7 @@ interface CartContextValue {
     price: number;
     image: string;
   }[];
+  deleteCartItem: (itemId: string) => Promise<void>;
   subtotal: number;
   addToCart: (item: {
     id: string;
@@ -131,11 +132,59 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     }
   };
 
+  const deleteCartItem = async (itemId: string) => {
+    if (currentUser) {
+      const userCartRef = doc(db, "carts", currentUser.uid);
+
+      try {
+        // Fetch the current cart data
+        const userCartDoc = await getDoc(userCartRef);
+
+        if (userCartDoc.exists()) {
+          const currentCartItems = userCartDoc.data()?.items || [];
+
+          // Filter out the item to be deleted
+          const updatedCartItems = currentCartItems.filter(
+            (item: { id: string }) => item.id !== itemId
+          );
+
+          // Recalculate the subtotal
+          const updatedSubtotal = updatedCartItems.reduce(
+            (total: number, item: { price: number }) => total + item.price,
+            0
+          );
+
+          // Update Firestore document
+          await updateDoc(userCartRef, {
+            cartCount: updatedCartItems.length,
+            items: updatedCartItems,
+            subtotal: updatedSubtotal,
+          });
+
+          // Update context state
+          setCartCount(updatedCartItems.length);
+          setCartItems(updatedCartItems);
+          setSubtotal(updatedSubtotal);
+
+          toast.success(`Item removed from cart`);
+        } else {
+          console.error("Cart document not found.");
+        }
+      } catch (error) {
+        console.error("Error removing item from cart:", error);
+        toast.error("An error occurred while removing the item from your cart");
+      }
+    } else {
+      toast.error("Please sign in to manage your cart");
+    }
+  };
+
   const value: CartContextValue = {
     cartCount,
     cartItems,
     addToCart,
     subtotal,
+    deleteCartItem,
   };
 
   return (

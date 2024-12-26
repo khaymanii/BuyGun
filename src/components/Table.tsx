@@ -2,7 +2,7 @@ import { useCart } from "../context/CartContext";
 import { RiDeleteBin3Line } from "react-icons/ri";
 
 function Table() {
-  const { cartItems } = useCart();
+  const { cartItems, deleteCartItem } = useCart();
 
   return (
     <table className="w-full border-collapse">
@@ -37,7 +37,10 @@ function Table() {
                 </td>
                 <td className="px-2 py-4 text-center">{item.name}</td>
                 <td className="px-2 py-4 text-center">${item.price}</td>
-                <td className="px-2 py-4 text-center">
+                <td
+                  className="px-2 py-4 text-center"
+                  onClick={() => deleteCartItem(item.id)}
+                >
                   <RiDeleteBin3Line />
                 </td>
               </tr>

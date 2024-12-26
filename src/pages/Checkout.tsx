@@ -1,9 +1,67 @@
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebaseConfig/firebase";
+
 import { useCart } from "../context/CartContext";
 function Checkout() {
-  const { subtotal } = useCart();
+  const { cartItems, subtotal, cartCount } = useCart();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    country: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, email, phone, address, city, country } = formData;
+
+    if (!name || !email || !phone || !address || !city || !country) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+    try {
+      // Add order to Firestore
+      const ordersRef = collection(db, "orders");
+      await addDoc(ordersRef, {
+        customerName: formData.name,
+        address: formData.address,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        country: formData.country,
+        cartItems,
+        subtotal,
+        cartCount,
+        createdAt: serverTimestamp(),
+      });
+
+      toast.success("Order placed successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        city: "",
+        country: "",
+      });
+
+      // Optionally, clear the cart state or navigate to another page
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      toast.error("Failed to place order. Please try again.");
+    }
+  };
 
   return (
     <div>
@@ -18,38 +76,69 @@ function Checkout() {
           <h1 className="text-xl font-semibold mb-4 tracking-wider">
             Billing Address
           </h1>
-          <form className="flex flex-col w-full">
+          <form className="flex flex-col w-full" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
               placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
               className="p-2 border outline-none rounded-lg mb-4"
+              required
             />
             <input
-              type="text"
+              type="email"
+              name="email"
               placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
               className="p-2 border outline-none rounded-lg mb-4"
+              required
             />
             <input
               type="text"
+              name="phone"
               placeholder="Phone number"
+              value={formData.phone}
+              onChange={handleChange}
               className="p-2 border outline-none rounded-lg mb-4"
-            />{" "}
+              required
+            />
             <input
               type="text"
+              name="address"
               placeholder="Street address"
+              value={formData.address}
+              onChange={handleChange}
               className="p-2 border outline-none rounded-lg mb-4"
-            />{" "}
+              required
+            />
             <input
               type="text"
+              name="city"
               placeholder="City"
+              value={formData.city}
+              onChange={handleChange}
               className="p-2 border outline-none rounded-lg mb-4"
+              required
             />
             <input
               type="text"
+              name="country"
               placeholder="Country"
+              value={formData.country}
+              onChange={handleChange}
               className="p-2 border outline-none rounded-lg mb-4"
+              required
             />
-          </form>{" "}
+            <button
+              title="Place Order Now"
+              type="submit"
+              className="w-full text-center p-2 bg-black text-white rounded-lg font-semibold"
+            >
+              Place Order Now
+            </button>
+          </form>
         </div>
         <div className="lg:w-96 w-full h-72 bg-black text-white rounded-lg p-4 tracking-wider">
           <div className="flex items-start justify-between mb-2">
@@ -72,6 +161,7 @@ function Checkout() {
             </p>
           </div>
           <button
+            onSubmit={handleSubmit}
             title="Place Order Now"
             type="submit"
             className="w-full text-center p-2 bg-white text-black rounded-lg font-semibold"
