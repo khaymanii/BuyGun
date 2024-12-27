@@ -17,7 +17,7 @@ export default function Hero() {
           to="/shop"
           className="bg-green-500 flex items-center justify-center p-2 text-white rounded-lg w-[50%] lg:w-[30%]"
         >
-          Shopping Now
+          Shop Now
         </Link>
       </div>
     </div>
