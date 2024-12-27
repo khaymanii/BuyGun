@@ -45,7 +45,7 @@ export default function Category() {
               {" "}
               <button
                 type="submit"
-                className="bg-green-500 rounded-md w-[20%] mobile:w-[50%] px-3 py-2 mt-5 text-white text-nowrap"
+                className="bg-green-500 rounded-md w-[20%] mobile:w-[50%] tablet:w-[50%] px-3 py-2 mt-5 text-white text-nowrap"
               >
                 {" "}
                 Shop Now{" "}
