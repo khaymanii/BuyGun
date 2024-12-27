@@ -14,6 +14,9 @@ export default {
         ipad: { max: "834px" },
         mobile: { max: "428px" },
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [flowbitePlugin],
