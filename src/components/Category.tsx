@@ -1,5 +1,4 @@
 import { categoriesCard } from "../../Utils/Data";
-import { Link } from "react-router-dom";
 export default function Category() {
   return (
     <div className="flex flex-col gap-10 mb-10 items-center">
