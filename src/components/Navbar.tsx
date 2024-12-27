@@ -65,34 +65,41 @@ function Navbar() {
               />
             </div>
             <ul className="space-y-4">
-              <li className="cursor-pointer">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="relative">
-                <div className="flex items-center justify-between cursor-pointer">
-                  <Link to="/shop">
+              <Link to="/">
+                {" "}
+                <li className="cursor-pointer">Home </li>
+              </Link>
+              <Link to="/shop">
+                <li className="relative">
+                  <div className="flex items-center justify-between cursor-pointer">
                     <span>Shop</span>
-                  </Link>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="flex items-center justify-between cursor-pointer">
-                  <Link to="/cart">
-                    <span>Cart</span>
-                  </Link>
-                </div>
-              </li>
-              <li className="cursor-pointer">
-                <Link to="/contact">Contact Us</Link>
-              </li>
-              <li className="cursor-pointer text-green-400 font-semibold">
-                <Link to="/signup">Sign up</Link>
-              </li>{" "}
-              <li className="cursor-pointer text-red-400 font-semibold">
-                <Link to="/" onClick={logOut}>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/cart">
+                <li className="relative">
+                  <div className="flex items-center justify-between cursor-pointer">
+                    <span>Cart</span>{" "}
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/contact">
+                {" "}
+                <li className="cursor-pointer">Contact Us </li>
+              </Link>
+              <Link to="/signup">
+                {" "}
+                <li className="cursor-pointer text-green-400 font-semibold">
+                  Sign up{" "}
+                </li>{" "}
+              </Link>
+              <Link to="/" onClick={logOut}>
+                <li className="cursor-pointer text-red-400 font-semibold">
                   Log out
-                </Link>
-              </li>
+                </li>
+              </Link>
             </ul>
           </div>
 
@@ -143,26 +150,29 @@ function Navbar() {
           isMenuOpen ? "flex-col lg:flex-row lg:static" : "hidden lg:flex"
         }`}
       >
-        <li className="cursor-pointer">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="relative">
-          <div className="flex items-center justify-between cursor-pointer">
-            <Link to="/shop">
+        <Link to="/">
+          {" "}
+          <li className="cursor-pointer">Home </li>
+        </Link>
+        <Link to="/shop">
+          <li className="relative">
+            <div className="flex items-center justify-between cursor-pointer">
               <span>Shop</span>
-            </Link>
-          </div>
-        </li>
-        <li className="relative">
-          <div className="flex items-center justify-between cursor-pointer">
-            <Link to="/cart">
+            </div>
+          </li>
+        </Link>
+        <Link to="/cart">
+          <li className="relative">
+            <div className="flex items-center justify-between cursor-pointer">
               <span>Cart</span>
-            </Link>
-          </div>
-        </li>
-        <li className="cursor-pointer">
-          <Link to="/contact">Contact Us</Link>
-        </li>
+            </div>
+          </li>
+        </Link>
+
+        <Link to="/contact">
+          {" "}
+          <li className="cursor-pointer">Contact Us</li>
+        </Link>
       </ul>
 
       {/* Icons Section */}
@@ -187,14 +197,16 @@ function Navbar() {
         </div>
         <div className="lg:flex gap-3 hidden">
           {" "}
-          <span className="cursor-pointer text-green-500 font-semibold">
-            <Link to="/signup">Sign up</Link>
-          </span>{" "}
-          <span className="cursor-pointer text-red-500 font-semibold">
-            <Link to="/" onClick={logOut}>
+          <Link to="/signup">
+            <span className="cursor-pointer text-green-500 font-semibold">
+              Sign up
+            </span>{" "}
+          </Link>
+          <Link to="/" onClick={logOut}>
+            <span className="cursor-pointer text-red-500 font-semibold">
               Log out
-            </Link>
-          </span>
+            </span>
+          </Link>
         </div>
       </div>
 
