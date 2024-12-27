@@ -40,19 +40,15 @@ export default function Featured() {
       <div className="flex flex-row text-center max-w-7xl mx-auto">
         <h2 className="font-semibold text-3xl">Featured</h2>
       </div>
-      <div className="flex flex-wrap justify-between gap-5 items-center mobile:grid mobile:grid-cols-1 tablet:grid tablet:grid-cols-2 tablet:gap-6">
+      <div className="flex flex-wrap justify-between gap-5 items-center mobile:grid mobile:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:gap-6">
         {cards.map((card: FeaturedCard) => (
           <div
-            className="flex flex-col bg-white rounded-lg shadow-lg p-4 w-full sm:w-[300px] tablet:w-auto lg:w-[350px]"
+            className="flex flex-col bg-white rounded-lg shadow-lg p-4 w-full md:w-auto lg:w-[350px]"
             key={card.id}
           >
             <div className="relative flex flex-col items-center">
               <div className="bg-gray-100 w-full flex items-center justify-center">
-                <img
-                  src={card.image}
-                  alt=""
-                  className="h-60 w-full object-cover rounded-md mobile:h-40"
-                />
+                <img src={card.image} alt="" className="h-40 w-32 lg:w-40" />
               </div>
               <span className="absolute top-2 left-2 bg-white text-black px-2 text-sm rounded">
                 {card.span}
@@ -72,7 +68,6 @@ export default function Featured() {
               </button>
             </div>
             <div className="flex flex-col items-start mt-4">
-              <img src={card.rate} alt="" className="w-16 md:w-20" />
               <h2 className="font-semibold text-base text-gray-800 md:text-lg">
                 {card.name}
               </h2>

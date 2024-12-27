@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="bg-black">
-      <div className="max-w-7xl mx-auto text-center py-20 lg:py-28 px-4 flex flex-col items-center justify-center">
+      <div className="text-center py-20 lg:py-28 px-4 flex flex-col items-center justify-center">
         <h2 className="text-white font-semibold text-3xl lg:text-5xl mb-4">
           More Than a Tool. It's a Statement.
         </h2>
@@ -15,7 +15,7 @@ export default function Hero() {
         </p>
         <Link
           to="/shop"
-          className="bg-green-500 flex items-center justify-center p-2 text-white rounded-lg w-[50%]"
+          className="bg-green-500 flex items-center justify-center p-2 text-white rounded-lg w-[50%] lg:w-[30%]"
         >
           Shopping Now
         </Link>

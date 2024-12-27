@@ -67,10 +67,10 @@ function Navbar() {
             <ul className="space-y-4">
               <Link to="/">
                 {" "}
-                <li className="cursor-pointer">Home </li>
+                <li className="cursor-pointer mb-4">Home </li>
               </Link>
               <Link to="/shop">
-                <li className="relative">
+                <li className="relative mb-4">
                   <div className="flex items-center justify-between cursor-pointer">
                     <span>Shop</span>
                   </div>
@@ -78,7 +78,7 @@ function Navbar() {
               </Link>
 
               <Link to="/cart">
-                <li className="relative">
+                <li className="relative mb-4">
                   <div className="flex items-center justify-between cursor-pointer">
                     <span>Cart</span>{" "}
                   </div>
@@ -87,16 +87,16 @@ function Navbar() {
 
               <Link to="/contact">
                 {" "}
-                <li className="cursor-pointer">Contact Us </li>
+                <li className="cursor-pointer mb-4">Contact Us </li>
               </Link>
               <Link to="/signup">
                 {" "}
-                <li className="cursor-pointer text-green-400 font-semibold">
+                <li className="cursor-pointer text-green-400 font-semibold mb-4">
                   Sign up{" "}
                 </li>{" "}
               </Link>
               <Link to="/" onClick={logOut}>
-                <li className="cursor-pointer text-red-400 font-semibold">
+                <li className="cursor-pointer text-red-400 font-semibold mb-4">
                   Log out
                 </li>
               </Link>
