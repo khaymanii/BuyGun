@@ -10,7 +10,7 @@ import Cart from "./pages/Cart";
 
 export default function App() {
   return (
-    <div className="">
+    <div className="font-poppins">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<Signup />} />
