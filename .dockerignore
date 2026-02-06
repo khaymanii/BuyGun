@@ -1,0 +1,7 @@
+node_modules
+.git
+.env
+dist          # your local build artifacts
+*.log         # logs
+.vscode       # editor files
+.DS_Store     # macOS system file
