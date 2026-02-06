@@ -29,7 +29,7 @@ RUN npm ci --omit=dev
 COPY --from=builder /app/dist ./dist
 
 # Expose port for Vite preview
-EXPOSE 4173
+EXPOSE 4174
 
 # Start the Vite preview server
 CMD ["npx", "vite", "preview", "--port", "4173", "--host"]
