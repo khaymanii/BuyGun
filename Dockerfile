@@ -32,4 +32,4 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 4174
 
 # Start the Vite preview server
-CMD ["npx", "vite", "preview", "--port", "4173", "--host"]
+CMD ["npx", "vite", "preview", "--port", "4174", "--host"]
