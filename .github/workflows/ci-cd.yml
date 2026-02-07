@@ -17,8 +17,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push Docker image
+       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
+          context: .
+          file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/buygun:0.1
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/buygun:0.2
+            ${{ secrets.DOCKERHUB_USERNAME }}/buygun:${{ github.sha }}
+          build-args: |
+            VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}
