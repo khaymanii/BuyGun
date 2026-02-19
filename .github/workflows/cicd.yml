@@ -69,7 +69,6 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/buygun:0.3
-            ${{ secrets.DOCKERHUB_USERNAME }}/buygun:${{ github.sha }}
           build-args: |
             VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}
 
@@ -91,11 +90,11 @@ jobs:
           sudo docker stop buygun || true
           sudo docker rm buygun || true
 
-          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/buygun:${{ github.sha }}
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/buygun:0.3
 
           sudo docker run -d \
             --name buygun \
             -p 80:4174 \
-            ${{ secrets.DOCKERHUB_USERNAME }}/buygun:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/buygun:0.3
 
           EOF
